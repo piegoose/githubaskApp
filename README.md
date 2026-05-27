@@ -30,7 +30,7 @@ GET /users/{username}/repositories
 ### Example request
 
 ```http
-GET /repositories/octocat
+GET /users/piegoose/repositories
 ```
 
 ### Example response
