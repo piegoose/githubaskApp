@@ -1,0 +1,38 @@
+Informacje do zadania
+1. Proszę nie robić nic poza rzeczami wymienionymi w tasku. Robienie rzeczy ponad proszone, będzie wadą nie zaletą, celem jest napisać to o co jest Pani/Pan proszony jak najlepiej.
+2. Nie używany Webflux.
+3. Do zadania załączamy tylko testy integracyjne (celem jak napisanie go bez mocków, do emulacji serwera używamy Wiremock). Proszę zamodelować testy, aby było ich jak najmniej, ale z punktu widzenia biznesowego sprawdzały logiczne przypadki.
+4. Nie obsługujemy paginacji (ani w wystawianym endpoint, ani przy konsumowaniu API)
+5. Nie piszemy nic związanego z security.
+6. Utrzymujemy tylko 2 rodzaje modeli, jedne „biznesowe” + DTO. Traktujemy aplikacje jako „proxy”. Architektura Controller/Service/Client jest wystarczająca na to zadanie.
+7. Nie wprowadzamy struktury DDD/Hexagonalnej do projektu. Wszystkie klasy trzymamy w jednym pakiecie i zwracamy uwagę na modyfikatory dostępu i keywordy. Nie dzielimy gradle projektu na moduły etc.
+8. Stack do zadania to Java 25 + Spring Boot 4 + Gradle z Kotlin DSL.
+Acceptance criteria:
+
+As an api consumer, I would like to list all his github repositories, which are not forks. Information, which I require in the response, is:
+
+Repository Name
+
+Owner Login
+
+For each branch it’s name and last commit sha
+
+
+
+As an api consumer, given not existing github user, I would like to receive  404 response in such a format:
+
+{
+
+    “status”: ${responseCode}
+
+    “message”: ${whyHasItHappened}
+
+}
+
+
+
+Notes:
+
+Please use https://developer.github.com/v3 as a backing API
+
+Application should have a proper README.md file
