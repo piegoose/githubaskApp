@@ -24,7 +24,7 @@ The application allows consumers to fetch all non-fork GitHub repositories for a
 ### Get repositories
 
 ```http
-GET /repositories/{username}
+GET /users/{username}/repositories
 ```
 
 ### Example request
